@@ -13,7 +13,7 @@ const journalSchema = z.object({
   isPublished: z.boolean(),
 });
 
-export async function createJournalAction(prevState: any, formData: FormData): Promise<{ errors?: any }> {
+export async function createJournalAction(prevState: any, formData: FormData) {
   const rawData = {
     title: formData.get('title'),
     content: formData.get('content'),
@@ -46,7 +46,7 @@ export async function createJournalAction(prevState: any, formData: FormData): P
 }
 
 
-export async function updateJournalAction(id: string, prevState: any, formData: FormData): Promise<{ errors?: any }> {
+export async function updateJournalAction(id: string, prevState: any, formData: FormData) {
     const rawData = {
         title: formData.get('title'),
         content: formData.get('content'),
