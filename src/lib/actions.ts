@@ -4,6 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { z } from 'zod';
 import { createJournal, deleteJournal, updateJournal } from './api';
+import type { Journal } from './types';
 
 const journalSchema = z.object({
   title: z.string().min(1, 'Title is required.'),
@@ -12,7 +13,7 @@ const journalSchema = z.object({
   isPublished: z.boolean(),
 });
 
-export async function createJournalAction(prevState: any, formData: FormData) {
+export async function createJournalAction(prevState: any, formData: FormData): Promise<{ errors?: any }> {
   const rawData = {
     title: formData.get('title'),
     content: formData.get('content'),
@@ -28,21 +29,24 @@ export async function createJournalAction(prevState: any, formData: FormData) {
     };
   }
 
+  let newJournal: Journal | undefined;
   try {
-    const newJournal = await createJournal({
+    newJournal = await createJournal({
       ...validatedFields.data,
       tags: validatedFields.data.tags.split(',').map(tag => tag.trim()).filter(Boolean),
     });
     revalidatePath('/');
-    redirect(`/journals/${newJournal.id}`);
   } catch (error) {
     return {
       errors: { _form: ['Failed to create journal.'] },
     };
   }
+
+  redirect(`/journals/${newJournal.id}`);
 }
 
-export async function updateJournalAction(id: string, prevState: any, formData: FormData) {
+
+export async function updateJournalAction(id: string, prevState: any, formData: FormData): Promise<{ errors?: any }> {
     const rawData = {
         title: formData.get('title'),
         content: formData.get('content'),

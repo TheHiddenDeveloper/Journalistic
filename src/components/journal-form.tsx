@@ -1,7 +1,6 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
-import { useEffect, useState } from 'react';
+import { useActionState, useEffect, useState } from 'react';
 import type { Journal } from '@/lib/types';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -11,7 +10,7 @@ import { Switch } from './ui/switch';
 import { Wand2, Loader2 } from 'lucide-react';
 import { Badge } from './ui/badge';
 import { suggestTags } from '@/ai/flows/suggest-tags';
-import { useForm } from 'react-hook-form';
+import { useForm, useFormStatus } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
@@ -30,7 +29,7 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 export default function JournalForm({ journal, action }: JournalFormProps) {
-  const [formState, formAction] = useFormState(action, { errors: {} });
+  const [formState, formAction] = useActionState(action, { errors: {} });
   const [isSuggesting, setIsSuggesting] = useState(false);
 
   const {
