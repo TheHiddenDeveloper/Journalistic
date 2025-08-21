@@ -18,6 +18,7 @@ export async function createJournalAction(prevState: any, formData: FormData) {
     title: formData.get('title'),
     content: formData.get('content'),
     tags: formData.get('tags'),
+    // When a checkbox is checked, its value is 'on'. If it's not checked, it's not included in the form data.
     isPublished: formData.get('isPublished') === 'on',
   };
 
