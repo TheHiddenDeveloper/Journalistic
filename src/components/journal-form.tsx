@@ -1,6 +1,7 @@
 'use client';
 
 import { useActionState, useEffect, useState } from 'react';
+import { useFormStatus } from 'react-dom';
 import type { Journal } from '@/lib/types';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -10,7 +11,7 @@ import { Switch } from './ui/switch';
 import { Wand2, Loader2 } from 'lucide-react';
 import { Badge } from './ui/badge';
 import { suggestTags } from '@/ai/flows/suggest-tags';
-import { useForm, useFormStatus } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
