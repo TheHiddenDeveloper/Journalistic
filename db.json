@@ -1,0 +1,31 @@
+{
+  "journals": [
+    {
+      "id": "1",
+      "title": "First Day of Summer",
+      "content": "Today was the first official day of summer! The sun was shining brightly, and the sky was a perfect shade of blue. I spent the afternoon at the beach, feeling the warm sand between my toes and listening to the gentle crash of waves. It felt so good to disconnect and just enjoy the moment. I read a few chapters of my book, took a dip in the cool water, and even built a sandcastle, just like when I was a kid. There's a certain magic to the start of summer, a feeling of endless possibilities and long, lazy days ahead. I can't wait to see what adventures this season brings.",
+      "tags": ["summer", "beach", "relaxation", "nature"],
+      "isPublished": true,
+      "createdAt": "2023-06-21T12:30:00.000Z",
+      "updatedAt": "2023-06-21T12:30:00.000Z"
+    },
+    {
+      "id": "2",
+      "title": "A Hike to Remember",
+      "content": "Woke up before dawn today to go on a hike I've been planning for weeks. The trail was challenging, with steep inclines and rocky paths, but the view from the summit was absolutely worth it. The world stretched out below me, a tapestry of green forests and sparkling rivers. The air was so fresh and clean. Watching the sunrise from that vantage point was a truly breathtaking experience. It's moments like these that remind me of the beauty of the natural world and make me feel so small in the grand scheme of things, yet so connected to everything. I feel energized and inspired.",
+      "tags": ["hiking", "nature", "adventure", "sunrise"],
+      "isPublished": true,
+      "createdAt": "2023-07-05T08:00:00.000Z",
+      "updatedAt": "2023-07-05T08:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "title": "Thoughts on Creativity",
+      "content": "Lately, I've been thinking a lot about creativity. Where does it come from? How can we nurture it? I had a bit of a creative block recently, and it was frustrating. But then I realized that forcing it is the worst thing you can do. Creativity is like a shy animal; you have to be patient and create a safe, welcoming space for it to emerge. I started just doodling without any goal in mind, reading poetry, and listening to different kinds of music. Slowly but surely, the ideas started to flow again. It's a reminder that inspiration is everywhere; we just need to be open to it.",
+      "tags": ["creativity", "inspiration", "reflection", "personal-growth"],
+      "isPublished": false,
+      "createdAt": "2023-07-15T21:00:00.000Z",
+      "updatedAt": "2023-07-15T21:00:00.000Z"
+    }
+  ]
+}
